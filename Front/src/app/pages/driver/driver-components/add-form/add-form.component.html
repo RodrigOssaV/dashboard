@@ -1,0 +1,74 @@
+<div class="card-footer">
+    <button class="button is-fullwidth" (click)="launchModal()">Agregar</button>
+
+    <div class="modal" id="addDriverService">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Agregar Conductores</p>
+                <button class="delete" aria-label="close" (click)="launchModal()"></button>
+            </header>
+
+            <section class="modal-card-body">
+                <!-- <form #formAddDriver="ngForm" (ngSubmit)="addDriver(formAddDriver)">
+                    <div class="field">
+                        <label for="" class="label">Nombres</label>
+                        <input type="text" class="input" placeholder="Daniel Alonso" name="name_driver" [(ngModel)]="Driver.nameDriver">
+                    </div>
+
+                    <div class="columns is-fullwidth">
+                        <div class="column is-half">
+                            <label for="" class="label">Apellido Paterno</label>
+                            <input type="text" class="input" placeholder="Burgos" name="firstlastname" [(ngModel)]="Driver.firstLastname">
+                        </div>
+                        <div class="column is-half">
+                            <label for="" class="label">Apellido Materno</label>
+                            <input type="text" class="input" placeholder="Moreno" name="secondlastname" [(ngModel)]="Driver.secondLastname">
+                        </div>
+                    </div>
+
+                    <div class="columns is-fullwidth">
+                        <div class="column is-8">
+                            <div class="field">
+                                <label for="" class="label">RUT</label>
+                                <input type="text" placeholder="17670744" class="input" name="rut_driver" [(ngModel)]="Driver.rut_">
+                            </div>
+                        </div>
+                        <div class="column is-2">
+                            <div class="field">
+                                <label for="" class="label">Digito</label>
+                                <input type="text" class="input" placeholder="5" name="digito_driver" [(ngModel)]="Driver.digito">
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="columns is-fullwidth">
+                        <div class="column is-half">
+                            <label for="" class="label">Teléfono</label> 
+                            <div class="field has-addons">                                                               
+                                    <p class="button is-static">
+                                        56
+                                    </p>
+                                    <input type="text" class="input" placeholder="93340575" name="phone_driver" [(ngModel)]="Driver.telefono">
+                            </div>                            
+                        </div>
+                        <div class="column is-half">
+                            <div class="field">
+                                <label for="" class="label">Nacionalidad</label>
+                                <div class="select is-fullwidth">
+                                    <select name="nation_driver" id="" [(ngModel)]="Driver.nation">
+                                        <option [value]="pais" *ngFor="let pais of listaPaises">{{pais}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="button is-primary mt5 is-fullwidth">Save changes</button>
+                </form> -->
+                <button class="button is-danger is-fullwidth mt-5" (click)="launchModal()">Close</button>
+            </section>
+        </div>
+    </div>
+</div>
