@@ -5,10 +5,10 @@ module.exports = {
     add_driver: (req, res) => {
         try {
             Driver.create({
-                rut: req.body.add_rut,
-                name: req.body.add_name,
-                lastname: req.body.add_lastname,
-                phone: req.body.add_phone
+                rut: req.body.rut,
+                name: req.body.name,
+                lastname: req.body.lastname,
+                phone: req.body.phone
             }).then(result => {
                 res.status(200).json(result);
             });
@@ -55,10 +55,9 @@ module.exports = {
         const {rut} = req.params;
         try {
             Driver.update({
-                rut: req.body.update_rut,
-                name: req.body.update_name,
-                lastname: req.body.update_lastname,
-                phone: req.body.update_phone
+                name: req.body.name,
+                lastname: req.body.lastname,
+                phone: req.body.phone
             },{
                 where: {rut}
             }).then(result => {
