@@ -36,5 +36,16 @@ export class DriverService {
       })
     )
   }
+
+  update_driver(rut:any, driver:any){
+    return this.http.put(URIs.api+`/update_driver/${rut}`, driver).pipe(
+      map((res:any)=>{
+        return res;
+      },
+      (err:any) => {
+        return err;
+      })
+    );
+  }
   
 }

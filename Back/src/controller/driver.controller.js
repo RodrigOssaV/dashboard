@@ -55,10 +55,9 @@ module.exports = {
         const {rut} = req.params;
         try {
             Driver.update({
-                rut: req.body.update_rut,
-                name: req.body.update_name,
-                lastname: req.body.update_lastname,
-                phone: req.body.update_phone
+                name: req.body.name,
+                lastname: req.body.lastname,
+                phone: req.body.phone
             },{
                 where: {rut}
             }).then(result => {

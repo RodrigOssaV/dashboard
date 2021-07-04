@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Driver } from 'src/app/class/driver';
+import { DriverService } from "../../../../service/driver/driver.service";
 
 @Component({
   selector: 'app-update-form',
@@ -10,26 +11,21 @@ export class UpdateFormComponent implements OnInit {
 
   @Input() newDriver: Driver = new Driver;
 
-  oldRut = {
-    rut: "",
-    digito: "" 
-  };
-
-  constructor() { }
+  constructor(private apiDriverService: DriverService) { }
 
   ngOnInit(): void {
-    console.log(this.newDriver);
-    /* this.separateRut(); */
-  }
-
-  separateRut(){
-    var array = this.newDriver.rut.split("-");
-    this.oldRut.rut = array[0];
-    this.oldRut.digito = array[1];
   }
 
   updateDriver(form:any){
-    
+    this.apiDriverService.update_driver(this.newDriver.rut, form.value).subscribe(
+      res => {
+        this.toggleEditarModal();
+        /* console.log(res); */
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   toggleEditarModal(){

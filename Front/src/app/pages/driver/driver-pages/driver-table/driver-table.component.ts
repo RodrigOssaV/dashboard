@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Driver } from 'src/app/class/driver';
 import { DriverService } from "../../../../service/driver/driver.service";
 
 @Component({
@@ -9,6 +10,7 @@ import { DriverService } from "../../../../service/driver/driver.service";
 export class DriverTableComponent implements OnInit {
 
   listDrivers:any;
+  conductorEdit: Driver = new Driver();
 
   constructor(private apiDriverService: DriverService) { }
 
@@ -19,6 +21,13 @@ export class DriverTableComponent implements OnInit {
       }
     })
     this.loadDriver();
+  }
+
+  btnEditarConductor(driver: Driver){
+    this.conductorEdit = driver;
+    /* console.log(this.conductorEdit); */
+    const editModal = document.querySelector('#updateDriverModal')!;
+    editModal.classList.toggle('is-active');
   }
 
   loadDriver(){
