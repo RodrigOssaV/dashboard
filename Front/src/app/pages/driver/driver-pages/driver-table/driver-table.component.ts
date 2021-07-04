@@ -10,7 +10,8 @@ import { DriverService } from "../../../../service/driver/driver.service";
 export class DriverTableComponent implements OnInit {
 
   listDrivers:any;
-  conductorEdit: Driver = new Driver();
+  driverEdit: Driver = new Driver();
+  driverDelete: Driver = new Driver();
 
   constructor(private apiDriverService: DriverService) { }
 
@@ -23,10 +24,17 @@ export class DriverTableComponent implements OnInit {
     this.loadDriver();
   }
 
-  btnEditarConductor(driver: Driver){
-    this.conductorEdit = driver;
-    /* console.log(this.conductorEdit); */
+  editDriver(driver: Driver){
+    this.driverEdit = driver;
+    /* console.log(this.driverEdit); */
     const editModal = document.querySelector('#updateDriverModal')!;
+    editModal.classList.toggle('is-active');
+  }
+
+  deleteDriver(driver:any){
+    this.driverDelete = driver;
+    /* console.log(this.driverDelete); */
+    const editModal = document.querySelector('#deleteDriverModal')!;
     editModal.classList.toggle('is-active');
   }
 
@@ -38,7 +46,7 @@ export class DriverTableComponent implements OnInit {
       err => {
         console.log(err);
       }
-    )
+    );
   }
 
 }
