@@ -13,6 +13,11 @@ export class DriverTableComponent implements OnInit {
   constructor(private apiDriverService: DriverService) { }
 
   ngOnInit(): void {
+    this.apiDriverService.loadList.subscribe(isLoaded => {
+      if(isLoaded === true){
+        this.loadDriver();
+      }
+    })
     this.loadDriver();
   }
 
@@ -20,7 +25,6 @@ export class DriverTableComponent implements OnInit {
     this.apiDriverService.get_drivers().subscribe(
       res => {
         this.listDrivers = res;
-        console.log(this.listDrivers);
       },
       err => {
         console.log(err);

@@ -1,26 +1,28 @@
-<table class="table is-bordered is-striped is-narrow is-fullwidth has-text-centered"  style="overflow-y: auto;">
-    <thead>
-        <tr>
-            <th>RUT</th>
-            <th>Nombres</th>
-            <th>Apellidos</th>
-            <th>Teléfono</th>
-            <th>Cantidad entregada</th>
-            <th>Opciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let driver of listDrivers">
-            <td>{{ driver.rut }}</td>
-            <td>{{ driver.name }}</td>
-            <td>{{ driver.lastname }}</td>
-            <td>{{ driver.phone }}</td>
-            <td>{{ driver.total_load }}</td>
-            <td>
-                <button class="button is-small">Edit</button>
-                <button class="button is-small">Delete</button>
-                <button class="button is-small">Profile</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="columns is-mobile">
+    <table class="table is-bordered is-striped is-narrow is-fullwidth has-text-centered"  style="overflow-y: auto;">
+        <thead>
+            <tr>
+                <th>RUT</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Teléfono</th>
+                <th>Cantidad entregada</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let driver of listDrivers">
+                <td>{{ driver.rut }}</td>
+                <td>{{ driver.name }}</td>
+                <td>{{ driver.lastname }}</td>
+                <td>{{ driver.phone }}</td>
+                <td>{{ driver.total_load }}</td>
+                <td>
+                    <app-update-form></app-update-form>
+                    <button class="button is-small">Delete</button>
+                    <button class="button is-small">Profile</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

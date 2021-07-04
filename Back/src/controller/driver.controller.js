@@ -5,10 +5,10 @@ module.exports = {
     add_driver: (req, res) => {
         try {
             Driver.create({
-                rut: req.body.add_rut,
-                name: req.body.add_name,
-                lastname: req.body.add_lastname,
-                phone: req.body.add_phone
+                rut: req.body.rut,
+                name: req.body.name,
+                lastname: req.body.lastname,
+                phone: req.body.phone
             }).then(result => {
                 res.status(200).json(result);
             });

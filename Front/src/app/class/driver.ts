@@ -1,9 +1,9 @@
 export class Driver {
 
-    add_rut!: string;
-    add_name!: string;
-    add_lastname!: string;
-    add_phone!: number;
+    rut!: string;
+    name!: string;
+    lastname!: string;
+    phone!: number;
 
     constructor(){}
 }

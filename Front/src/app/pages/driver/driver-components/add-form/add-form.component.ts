@@ -14,7 +14,7 @@ export class AddFormComponent implements OnInit {
   newRut = {
     rut: '',
     digito: ''
-  }
+  };
 
   constructor(private apiDriverService: DriverService) { }
 
@@ -22,7 +22,7 @@ export class AddFormComponent implements OnInit {
   }
 
   addDriver(form:any){
-    this.newDriver.add_rut = this.newRut.rut+"-"+this.newRut.digito;
+    this.newDriver.rut = this.newRut.rut+"-"+this.newRut.digito;
 
     this.apiDriverService.add_driver(this.newDriver).subscribe(
       res => {
@@ -32,7 +32,7 @@ export class AddFormComponent implements OnInit {
       err => {
         console.log(err);
       }
-    )
+    );
     
   }
 

@@ -17,6 +17,7 @@ export class DriverService {
   add_driver(data:any){
     return this.http.post(URIs.api+'/add_driver', data).pipe(
       map((res:any) => {
+        this.turnLoad.next(true);
         return res
       },
       (err:any) => {

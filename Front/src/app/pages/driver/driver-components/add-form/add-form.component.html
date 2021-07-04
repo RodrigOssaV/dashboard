@@ -13,12 +13,12 @@
                 <form #formAddDriver="ngForm" (ngSubmit)="addDriver(formAddDriver)">
                     <div class="field">
                         <label for="" class="label">Nombres</label>
-                        <input type="text" class="input" placeholder="Daniel Alonso" name="name_driver" [(ngModel)]="newDriver.add_name">
+                        <input type="text" class="input" placeholder="Daniel Alonso" name="name_driver" [(ngModel)]="newDriver.name">
                     </div>
 
                     <div class="field">
                         <label for="" class="label">Apellidos </label>
-                        <input type="text" class="input" placeholder="Burgos Moreno" name="name_driver" [(ngModel)]="newDriver.add_lastname">
+                        <input type="text" class="input" placeholder="Burgos Moreno" name="name_driver" [(ngModel)]="newDriver.lastname">
                     </div>
 
                     <div class="columns is-fullwidth">
@@ -43,7 +43,7 @@
                                     <p class="button is-static">
                                         +56 9
                                     </p>
-                                    <input type="text" class="input" placeholder="93340575" required name="phone_driver" [(ngModel)]="newDriver.add_phone">
+                                    <input type="text" class="input" placeholder="93340575" name="phone_driver" [(ngModel)]="newDriver.phone">
                             </div>                            
                         </div>
                     </div>
