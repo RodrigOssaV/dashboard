@@ -9,15 +9,15 @@ import { DriverService } from "../../../../service/driver/driver.service";
 })
 export class UpdateFormComponent implements OnInit {
 
-  @Input() newDriver: Driver = new Driver;
+  @Input() updateDriver: Driver = new Driver;
 
   constructor(private apiDriverService: DriverService) { }
 
   ngOnInit(): void {
   }
 
-  updateDriver(form:any){
-    this.apiDriverService.update_driver(this.newDriver.rut, form.value).subscribe(
+  update_Driver(form:any){
+    this.apiDriverService.update_driver(this.updateDriver.rut, form.value).subscribe(
       res => {
         this.toggleEditarModal();
         /* console.log(res); */

@@ -47,5 +47,17 @@ export class DriverService {
       })
     );
   }
+
+  delete_driver(rut:any){
+    return this.http.delete(URIs.api+`/delete_driver/${rut}`).pipe(
+      map((res:any)=>{
+        this.turnLoad.next(true);
+        return res;
+      },
+      (err:any) => {
+        return err;
+      })
+    );
+  }
   
 }

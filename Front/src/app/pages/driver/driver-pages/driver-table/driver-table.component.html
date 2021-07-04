@@ -18,8 +18,8 @@
                 <td>{{ driver.phone }}</td>
                 <td>{{ driver.total_load }}</td>
                 <td>
-                    <button class="button is-small" (click)="btnEditarConductor(driver)">Editar</button>
-                    <button class="button is-small">Delete</button>
+                    <button class="button is-small" (click)="editDriver(driver)">Editar</button>
+                    <button class="button is-small" (click)="deleteDriver(driver)">Delete</button>
                     <button class="button is-small">Profile</button>
                 </td>
             </tr>
@@ -27,4 +27,5 @@
     </table>
 </div>
 
-<app-update-form [newDriver]="conductorEdit"></app-update-form>
+<app-update-form [updateDriver]="driverEdit"></app-update-form>
+<app-delete-form [deleteDriver]="driverDelete"></app-delete-form>

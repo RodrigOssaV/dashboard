@@ -7,15 +7,15 @@
         </header>
 
         <section class="modal-card-body">
-            <form #formUpdateDriver="ngForm" (ngSubmit)="updateDriver(formUpdateDriver)">
+            <form #formUpdateDriver="ngForm" (ngSubmit)="update_Driver(formUpdateDriver)">
                 <div class="field">
                     <label for="" class="label">Nombres</label>
-                    <input type="text" class="input" [value]="newDriver.name" name="name" [(ngModel)]="newDriver.name">
+                    <input type="text" class="input" [value]="updateDriver.name" name="name" [(ngModel)]="updateDriver.name">
                 </div>
 
                 <div class="field">
                     <label for="" class="label">Apellidos </label>
-                    <input type="text" class="input" placeholder="Burgos Moreno" [value]="newDriver.lastname" name="lastname" [(ngModel)]="newDriver.lastname">
+                    <input type="text" class="input" placeholder="Burgos Moreno" [value]="updateDriver.lastname" name="lastname" [(ngModel)]="updateDriver.lastname">
                 </div>
 
                 <!-- <div class="columns is-fullwidth">
@@ -40,7 +40,7 @@
                                 <p class="button is-static">
                                     +56 9
                                 </p>
-                                <input type="text" class="input" [value]="newDriver.phone" name="phone" [(ngModel)]="newDriver.phone">
+                                <input type="text" class="input" [value]="updateDriver.phone" name="phone" [(ngModel)]="updateDriver.phone">
                         </div>                            
                     </div>
                 </div>
