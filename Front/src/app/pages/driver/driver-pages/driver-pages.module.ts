@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from "../../../app-routing.module";
 
-import { DriverPanelComponent } from './driver-panel/driver-panel.component';
-
 import { DriverComponentsModule } from "../driver-components/driver-components.module";
+
+import { DriverPanelComponent } from './driver-panel/driver-panel.component';
+import { DriverTableComponent } from './driver-table/driver-table.component';
 
 @NgModule({
   declarations: [
-    DriverPanelComponent
+    DriverPanelComponent,
+    DriverTableComponent
   ],
   imports: [
     CommonModule,
@@ -16,7 +18,8 @@ import { DriverComponentsModule } from "../driver-components/driver-components.m
     DriverComponentsModule
   ],
   exports: [
-    DriverPanelComponent
+    DriverPanelComponent,
+    DriverTableComponent
   ]
 })
 export class DriverPagesModule { }
