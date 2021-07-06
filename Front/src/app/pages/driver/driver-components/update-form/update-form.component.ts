@@ -20,7 +20,6 @@ export class UpdateFormComponent implements OnInit {
     this.apiDriverService.update_driver(this.updateDriver.rut, form.value).subscribe(
       res => {
         this.toggleEditarModal();
-        /* console.log(res); */
       },
       err => {
         console.log(err);
