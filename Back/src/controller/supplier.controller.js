@@ -15,7 +15,7 @@ module.exports = {
         }
     },
 
-    get_all_suppliers: (req, res) => {
+    get_suppliers: (req, res) => {
         try {
             Supplier.findAll().then(result => {
                 res.status(200).json(result);
