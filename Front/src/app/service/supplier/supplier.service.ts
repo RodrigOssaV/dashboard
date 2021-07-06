@@ -7,15 +7,15 @@ import { BehaviorSubject } from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class DriverService {
+export class SupplierService {
 
   turnLoad = new BehaviorSubject<boolean>(false);
   loadList = this.turnLoad.asObservable();
 
   constructor(private http: HttpClient) { }
 
-  add_driver(data:any){
-    return this.http.post(URIs.api+'/add_driver', data).pipe(
+  add_supplier(data:any){
+    return this.http.post(URIs.api+'/add_supplier', data).pipe(
       map((res:any) => {
         this.turnLoad.next(true);
         return res
@@ -23,21 +23,21 @@ export class DriverService {
       (err:any) => {
         return err
       })
-    );
+    )
   }
 
-  get_drivers(){
-    return this.http.get(URIs.api+'/get_drivers').pipe(
+  get_suppliers(){
+    return this.http.get(URIs.api+'/get_suppliers').pipe(
       map((res:any) => {
         return res;
       },
       (err:any) => {
         return err;
       })
-    );
+    )
   }
 
-  update_driver(rut:any, driver:any){
+  /* update_supplier(rut:any, driver:any){
     return this.http.put(URIs.api+`/update_driver/${rut}`, driver).pipe(
       map((res:any)=>{
         return res;
@@ -46,9 +46,9 @@ export class DriverService {
         return err;
       })
     );
-  }
+  } */
 
-  delete_driver(rut:any){
+  /* delete_supplier(rut:any){
     return this.http.delete(URIs.api+`/delete_driver/${rut}`).pipe(
       map((res:any)=>{
         this.turnLoad.next(true);
@@ -58,6 +58,6 @@ export class DriverService {
         return err;
       })
     );
-  }
-  
+  } */
+
 }
