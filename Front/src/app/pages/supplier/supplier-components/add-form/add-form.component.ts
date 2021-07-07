@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Supplier } from "../../../../class/supplier";
+import { SupplierService } from "../../../../service/supplier/supplier.service";
 
 @Component({
   selector: 'app-add-form',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddFormComponent implements OnInit {
 
-  constructor() { }
+  newSupplier: Supplier = new Supplier();
+
+  constructor(private apiSupplier: SupplierService) { }
 
   ngOnInit(): void {
+  }
+
+  addSupplier(form:any){
+    this.apiSupplier.add_supplier(this.newSupplier).subscribe(
+      res => {
+        form.reset();
+        this.launchModal();
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   launchModal(){

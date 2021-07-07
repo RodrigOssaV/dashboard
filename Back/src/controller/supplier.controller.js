@@ -55,7 +55,7 @@ module.exports = {
         try {
             Supplier.update({
                 name_supplier: req.body.name_supplier,
-                type: req.body.type_supplier
+                type_supplier: req.body.type_supplier
             },{
                 where: {id_supplier}
             }).then(result => {

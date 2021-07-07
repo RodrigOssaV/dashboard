@@ -3,3 +3,9 @@ body {
     background-color: #3AAFA9;
     height: 100vh;
 }
+
+*{
+	margin: 0;
+	font-family: Roboto Condensed;
+    font-size: 18px;
+}
