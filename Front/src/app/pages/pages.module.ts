@@ -9,6 +9,7 @@ import { SupplierComponent } from './supplier/supplier.component';
 
 /* Modulos */
 import { DriverPagesModule } from "./driver/driver-pages/driver-pages.module";
+import { SupplierPagesModule } from "./supplier/supplier-pages/supplier-pages.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DriverPagesModule } from "./driver/driver-pages/driver-pages.module";
   imports: [
     CommonModule,
     AppRoutingModule,
-    DriverPagesModule
+    DriverPagesModule,
+    SupplierPagesModule
   ],
   exports: [
     DashboardComponent,
