@@ -9,7 +9,15 @@ export class DashboardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
+  }
+  tab = 1;
+
+  isActive(tabId: number): boolean {
+    return this.tab === tabId;
   }
 
+  openTab(tabId: number): void {
+    this.tab = tabId;
+  }
 }
