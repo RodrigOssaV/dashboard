@@ -73,15 +73,43 @@
 
         </div>
     </div>
-    <div class="column is-half mt-1">
+    <div class="column is-half">
         <app-grafic></app-grafic>
     </div>
-    <div class="column is-half mt-1">
+    <div class="column is-half">
         <app-grafic-supplier></app-grafic-supplier>
     </div>
-    <div class="column is-full">
+
+    <div class="columns is-gapless is-multiline">
+        <div class="column is-full">
+            <div class="tabnav tabs is-centered">
+                <ul>
+                    <li>
+                        <button class="button" [ngClass]="{ active: isActive(1) }" (click)="openTab(1)">
+                            Drivers
+                        </button>
+                    </li>
+                    <li>
+                        <button class="button" [ngClass]="{ active: isActive(2) }" (click)="openTab(2)">
+                            Suppliers
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="column is-full">
+            <div class="box">
+                <div [hidden]="!isActive(1)">
+                    <app-driver-table></app-driver-table>
+                </div>
+                <div [hidden]="!isActive(2)">
+                    <app-supplier-table></app-supplier-table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
         <div class="box"></div>
     </div>
 </div>
-
-
