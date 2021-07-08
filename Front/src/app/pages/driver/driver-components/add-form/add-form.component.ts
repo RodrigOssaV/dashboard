@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Driver } from "../../../../class/driver";
 import { DriverService } from "../../../../service/driver/driver.service";
+import { NotificationService } from "../../../../service/component/notification.service";
 
 @Component({
   selector: 'app-add-form',
@@ -16,7 +17,7 @@ export class AddFormComponent implements OnInit {
     digito: ''
   };
 
-  constructor(private apiDriverService: DriverService) { }
+  constructor(private apiDriverService: DriverService, private notificationService: NotificationService) { }
 
   ngOnInit(): void {
   }
@@ -26,14 +27,14 @@ export class AddFormComponent implements OnInit {
 
     this.apiDriverService.add_driver(this.newDriver).subscribe(
       res => {
+        this.notificationService.showSuccess("Conductor agregado","Notificación");
         form.reset();
         this.launchModal();
       },
       err => {
         console.log(err);
       }
-    );
-    
+    );    
   }
 
   launchModal(){

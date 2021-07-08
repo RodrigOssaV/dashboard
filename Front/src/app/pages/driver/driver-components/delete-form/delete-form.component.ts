@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Driver } from 'src/app/class/driver';
+import { NotificationService } from 'src/app/service/component/notification.service';
 import { DriverService } from "../../../../service/driver/driver.service";
+
 
 @Component({
   selector: 'app-delete-form',
@@ -13,7 +15,7 @@ export class DeleteFormComponent implements OnInit {
 
   deleteRut!: string;
 
-  constructor(private apiDriverService: DriverService) { }
+  constructor(private apiDriverService: DriverService, private notifyService: NotificationService) { }
 
   ngOnInit(): void {
     
@@ -23,6 +25,7 @@ export class DeleteFormComponent implements OnInit {
     this.deleteRut = this.deleteDriver.rut;
     this.apiDriverService.delete_driver(this.deleteRut).subscribe(
       res => {
+        this.notifyService.showWarning("Conductor eliminado","Notificación");
         this.launchDeleteModal();
       },
       err => {
