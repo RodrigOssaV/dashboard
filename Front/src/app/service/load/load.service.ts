@@ -24,4 +24,16 @@ export class LoadService {
       })
     );
   }
+
+  add_load(data:any){
+    return this.http.post(URIs.api+'/add_load', data).pipe(
+      map((res:any) => {
+        this.turnLoad.next(true);
+        return res;
+      },
+      (err: any) => {
+        return err;
+      })
+    );
+  }
 }

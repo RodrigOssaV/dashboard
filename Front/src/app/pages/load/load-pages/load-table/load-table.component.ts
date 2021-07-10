@@ -13,6 +13,11 @@ export class LoadTableComponent implements OnInit {
   constructor(private apiLoad: LoadService) { }
 
   ngOnInit(): void {
+    this.apiLoad.loadList.subscribe(isLoaded => {
+      if(isLoaded === true){
+        this.loadLoads();
+      }
+    })
     this.loadLoads();
   }
 
@@ -20,7 +25,6 @@ export class LoadTableComponent implements OnInit {
     this.apiLoad.get_loads().subscribe(
       res => {
         this.listLoads = res;
-        /* console.log(this.listLoads); */
       },
       err => {
         console.log(err);
