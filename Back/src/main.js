@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 const app = express();
+require('./database/sequelize.relations');
 
 app.set('port', process.env.PORT || 3000);
 
@@ -12,6 +13,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
+app.use('/api', require('./routes/load.route'));
 app.use('/api', require('./routes/driver.route'));
 app.use('/api', require('./routes/supplier.route'));
 
