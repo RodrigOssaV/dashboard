@@ -1,56 +1,34 @@
 <div class="card-footer">
-    <button class="button is-primary is-fullwidth" (click)="launchModal()">Agregar</button>
+    <button class="button is-primary is-fullwidth" (click)="launchModal()">Add on</button>
 
     <div class="modal" id="addDriverService">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Agregar Proveedores</p>
+                <p class="modal-card-title">Incorporate supplier</p>
                 <button class="delete" aria-label="close" (click)="launchModal()"></button>
             </header>
 
             <section class="modal-card-body">
-                <!-- <form #formAddDriver="ngForm" (ngSubmit)="addDriver(formAddDriver)">
-                    <div class="field">
-                        <label for="" class="label">Nombres</label>
-                        <input type="text" class="input" placeholder="Daniel Alonso" name="name_driver" [(ngModel)]="newDriver.name">
-                    </div>
+                <form #formAddSupplier="ngForm" (ngSubmit)="addSupplier(formAddSupplier)">
 
                     <div class="field">
-                        <label for="" class="label">Apellidos </label>
-                        <input type="text" class="input" placeholder="Burgos Moreno" name="name_driver" [(ngModel)]="newDriver.lastname">
+                        <label for="" class="label">Name</label>
+                        <input 
+                        type="text" class="input" placeholder="Marketing y Comunicaciones Soffan" 
+                        name="name_supplier" [(ngModel)]="newSupplier.name_supplier">
                     </div>
 
-                    <div class="columns is-fullwidth">
-                        <div class="column is-8">
-                            <div class="field">
-                                <label for="" class="label">Rol único nacional</label>
-                                <input type="text" placeholder="17670744" class="input" name="rut_driver" [(ngModel)]="newRut.rut">
-                            </div>
-                        </div>
-                        <div class="column is-2">
-                            <div class="field">
-                                <label for="" class="label">Digito</label>
-                                <input type="text" class="input" placeholder="5" name="digito_driver" [(ngModel)]="newRut.digito">
-                            </div>
-                        </div>                        
+                    <div class="field">
+                        <label for="" class="label">Type</label>
+                        <input 
+                        type="text" class="input" placeholder="encomiendas, diarios, sobres, camas, etc..." 
+                        name="type_supplier" [(ngModel)]="newSupplier.type_supplier">
                     </div>
 
-                    <div class="columns is-fullwidth">
-                        <div class="column">
-                            <label for="" class="label">Teléfono</label> 
-                            <div class="field has-addons">                                                               
-                                    <p class="button is-static">
-                                        +56 9
-                                    </p>
-                                    <input type="text" class="input" placeholder="93340575" name="phone_driver" [(ngModel)]="newDriver.phone">
-                            </div>                            
-                        </div>
-                    </div>
-
-                    <button class="button is-primary mt5 is-fullwidth">Guardar conductor</button>
-                </form> -->
-                <button class="button is-danger is-fullwidth mt-5" (click)="launchModal()">Cancelar</button>
+                    <button class="button is-primary mt5 is-fullwidth">Save</button>
+                </form>
+                <button class="button is-danger is-fullwidth mt-5" (click)="launchModal()">Cancel</button>
             </section>
         </div>
     </div>
