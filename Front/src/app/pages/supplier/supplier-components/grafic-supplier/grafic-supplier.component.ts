@@ -39,7 +39,7 @@ export class GraficSupplierComponent implements OnInit {
     this.apiSupplier.get_suppliers().subscribe(
       res => {
         this.listSupplier = res;
-        console.log(this.listSupplier);
+        /* console.log(this.listSupplier); */
         for (const supplier of this.listSupplier){
           this.pieChartData.push(supplier.total_amount);
           this.pieChartLabels.push([supplier.name_supplier]);
