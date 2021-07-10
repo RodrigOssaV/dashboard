@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from "../../../app-routing.module";
 
+import { LoadComponentsModule } from "../load-components/load-components.module";
+
 import { LoadPanelComponent } from './load-panel/load-panel.component';
 import { LoadTableComponent } from './load-table/load-table.component';
 
@@ -12,7 +14,8 @@ import { LoadTableComponent } from './load-table/load-table.component';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LoadComponentsModule
   ],
   exports: [
     LoadPanelComponent,
