@@ -23,7 +23,7 @@ export class SupplierService {
       (err:any) => {
         return err
       })
-    )
+    );
   }
 
   get_suppliers(){
@@ -34,7 +34,7 @@ export class SupplierService {
       (err:any) => {
         return err;
       })
-    )
+    );
   }
 
   /* update_supplier(rut:any, driver:any){
