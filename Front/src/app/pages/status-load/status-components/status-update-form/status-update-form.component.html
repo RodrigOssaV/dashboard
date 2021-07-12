@@ -2,52 +2,33 @@
     <div class="modal-background"></div>
     <div class="modal-card">
         <header class="modal-card-head">
-            <p class="modal-card-title">Editar conductor</p>
-            <button class="delete" aria-label="close" (click)="toggleEditarModal()"></button>
+            <p class="modal-card-title">Update assigment load</p>
+            <button class="delete" aria-label="close" (click)="updateStatusLoadModal()"></button>
         </header>
 
         <section class="modal-card-body">
-            <!-- <form #formUpdateDriver="ngForm" (ngSubmit)="update_Driver(formUpdateDriver)">
-                <div class="field">
-                    <label for="" class="label">Nombres</label>
-                    <input type="text" class="input" [value]="updateDriver.name" name="name" [(ngModel)]="updateDriver.name">
-                </div>
-
-                <div class="field">
-                    <label for="" class="label">Apellidos </label>
-                    <input type="text" class="input" placeholder="Burgos Moreno" [value]="updateDriver.lastname" name="lastname" [(ngModel)]="updateDriver.lastname">
-                </div>
-
-                <!-- <div class="columns is-fullwidth">
-                    <div class="column is-8">
-                        <div class="field">
-                            <label for="" class="label">Rol único nacional</label>
-                            <input type="text" class="input" name="rut" [value]="oldRut.rut">
-                        </div>
+            <form #formUpdateStatusLoad="ngForm" (ngSubmit)="update_status_load(formUpdateStatusLoad)">
+                
+                <fieldset disabled>
+                    <div class="field">
+                        <label for="" class="label">id_status_load</label>
+                        <input type="text" class="input" name="id_statusload"  
+                        [placeholder]="updateStatusLoad.id_status_load">
                     </div>
-                    <div class="column is-2">
-                        <div class="field">
-                            <label for="" class="label">Digito</label>
-                            <input type="text" class="input" placeholder="5" name="digito_driver" [value]="oldRut.digito">
-                        </div>
-                    </div>                        
+                </fieldset>
+                
+                <div class="field">
+                    <label for="" class="label">amount_delivery</label>
+                    <input 
+                    type="number" class="input" name="id_load" 
+                    [value]="updateStatusLoad.amount_delivery" min="0" [max]="updateStatusLoad.amount_not_delivery"
+                    onkeypress="return (event.charCode==8 || event.charCode==0 || event.charCode==13) ? null : event.charCode>=48 && event.charCode<=57"
+                    >
                 </div>
 
-                <div class="columns is-fullwidth">
-                    <div class="column">
-                        <label for="" class="label">Teléfono</label> 
-                        <div class="field has-addons">                                                               
-                                <p class="button is-static">
-                                    +56 9
-                                </p>
-                                <input type="text" class="input" [value]="updateDriver.phone" name="phone" [(ngModel)]="updateDriver.phone">
-                        </div>                            
-                    </div>
-                </div>
-
-                <button class="button is-primary mt5 is-fullwidth">Guardar conductor</button>
-            </form> -->
-            <button class="button is-danger is-fullwidth mt-5" (click)="toggleEditarModal()">Cancelar</button>
+                <button class="button is-primary mt5 is-fullwidth">Save load</button>
+            </form>
+            <button class="button is-danger is-fullwidth mt-5" (click)="updateStatusLoadModal()">Cancelar</button>
         </section>
     </div>
 

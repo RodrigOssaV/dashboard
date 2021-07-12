@@ -37,7 +37,7 @@ export class StatusTableComponent implements OnInit {
 
   editStatus(status: Statusload){
     this.statusloadEdit = status;
-    console.log(this.statusloadEdit);
+    /* console.log(this.statusloadEdit); */
     const editModal = document.querySelector('#updateStatusLoadModal')!;
     editModal.classList.toggle('is-active');
   }

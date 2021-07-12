@@ -15,9 +15,13 @@ export class StatusUpdateFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  toggleEditarModal(){
+  updateStatusLoadModal(){
     let modal = document.querySelector('#updateStatusLoadModal')!;
     modal.classList.toggle('is-active');
+  }
+
+  update_status_load(form:any){
+    
   }
 
 }
