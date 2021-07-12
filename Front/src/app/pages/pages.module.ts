@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DriverComponent } from "./driver/driver.component";
 import { SupplierComponent } from './supplier/supplier.component';
 import { LoadComponent } from './load/load.component';
+import { StatusLoadComponent } from './status-load/status-load.component';
 
 /* Modulos */
 import { DriverPagesModule } from "./driver/driver-pages/driver-pages.module";
@@ -18,29 +19,36 @@ import { SupplierComponentsModule } from "./supplier/supplier-components/supplie
 import { LoadPagesModule } from "./load/load-pages/load-pages.module";
 import { LoadComponentsModule } from "./load/load-components/load-components.module";
 
+import { StatusComponentsModule } from "./status-load/status-components/status-components.module";
+import { StatusPagesModule } from "./status-load/status-pages/status-pages.module";
+
 
 @NgModule({
   declarations: [
     DashboardComponent,
     DriverComponent,
     SupplierComponent,
-    LoadComponent
+    LoadComponent,
+    StatusLoadComponent
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
     DriverPagesModule,
-    SupplierPagesModule,
     DriverComponentsModule,
+    SupplierPagesModule,
     SupplierComponentsModule,
     LoadPagesModule,
-    LoadComponentsModule
+    LoadComponentsModule,
+    StatusComponentsModule,
+    StatusPagesModule
   ],
   exports: [
     DashboardComponent,
     DriverComponent,
     SupplierComponent,
-    LoadComponent
+    LoadComponent,
+    StatusLoadComponent
   ]
 })
 export class PagesModule { }
