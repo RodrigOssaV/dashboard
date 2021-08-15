@@ -8,6 +8,7 @@ import { DriverComponent } from "./driver/driver.component";
 import { SupplierComponent } from './supplier/supplier.component';
 import { LoadComponent } from './load/load.component';
 import { StatusLoadComponent } from './status-load/status-load.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 /* Modulos */
 import { DriverPagesModule } from "./driver/driver-pages/driver-pages.module";
@@ -22,6 +23,8 @@ import { LoadComponentsModule } from "./load/load-components/load-components.mod
 import { StatusComponentsModule } from "./status-load/status-components/status-components.module";
 import { StatusPagesModule } from "./status-load/status-pages/status-pages.module";
 
+import { UsuarioComponentsModule } from "./usuario/usuario-components/usuario-components.module";
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { StatusPagesModule } from "./status-load/status-pages/status-pages.modul
     DriverComponent,
     SupplierComponent,
     LoadComponent,
-    StatusLoadComponent
+    StatusLoadComponent,
+    UsuarioComponent
   ],
   imports: [
     CommonModule,
@@ -41,14 +45,16 @@ import { StatusPagesModule } from "./status-load/status-pages/status-pages.modul
     LoadPagesModule,
     LoadComponentsModule,
     StatusComponentsModule,
-    StatusPagesModule
+    StatusPagesModule,
+    UsuarioComponentsModule
   ],
   exports: [
     DashboardComponent,
     DriverComponent,
     SupplierComponent,
     LoadComponent,
-    StatusLoadComponent
+    StatusLoadComponent,
+    UsuarioComponent
   ]
 })
 export class PagesModule { }
