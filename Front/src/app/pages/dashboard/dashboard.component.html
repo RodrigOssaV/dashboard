@@ -44,11 +44,24 @@
     </div>
 </div>   -->
 <section class="hero is-small">
-    <div class="hero-body">
-        <p class="title">
-            Dashboard!!
-        </p>
-    </div>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+            </a>
+        </div>
+        <div class="navbar-end">
+            <ng-container *ngIf="authService.usuarioLogueado()">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-light" (click)="authService.logout()">
+                            Cerrar sesión
+                        </a>
+                    </div>
+                </div>
+            </ng-container>
+        </div>    
+    </nav>
 </section>
 <div class="columns is-gapless is-multiline is-mobile">
     <div class="column is-half">
