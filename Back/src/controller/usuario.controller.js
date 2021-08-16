@@ -18,7 +18,7 @@ module.exports = {
     loguearUsuario: async (req, res) => {
         const { email, password } = req.body;
         const user = await Usuario.findOne({where: {email: email}});
-        if(!user) return res.status(401).send('correo no encontrado');
+        if(!user) return res.status(401).json({message: "Usuario no encontrado"});
         const validPassword = await helpers.matchPassword(password, user.password);
         if(validPassword){
             const token = await jwt.sign({_id: user.id}, 'secretkey');
