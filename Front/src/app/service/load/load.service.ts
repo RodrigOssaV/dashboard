@@ -36,4 +36,15 @@ export class LoadService {
       })
     );
   }
+
+  get_load(rut:any){
+    return this.http.get(URIs.api+`/get_load/${rut}`).pipe(
+      map((res:any) => {
+        return res;
+      },
+      (err:any) => {
+        return err;
+      })
+    );
+  }
 }
