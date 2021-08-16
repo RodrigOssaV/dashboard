@@ -26,6 +26,17 @@ export class DriverService {
     );
   }
 
+  get_driver(rut:any){
+    return this.http.get(URIs.api+`/get_driver/${rut}`).pipe(
+      map((res:any) => {
+        return res;
+      },
+      (err:any) => {
+        return err;
+      })
+    );
+  }
+
   get_drivers(){
     return this.http.get(URIs.api+'/get_drivers').pipe(
       map((res:any) => {
