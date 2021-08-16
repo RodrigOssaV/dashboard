@@ -25,6 +25,8 @@ import { StatusPagesModule } from "./status-load/status-pages/status-pages.modul
 
 import { UsuarioComponentsModule } from "./usuario/usuario-components/usuario-components.module";
 
+import { SharedModule } from "../shared/shared.module";
+
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { UsuarioComponentsModule } from "./usuario/usuario-components/usuario-co
     LoadComponentsModule,
     StatusComponentsModule,
     StatusPagesModule,
-    UsuarioComponentsModule
+    UsuarioComponentsModule,
+    SharedModule
   ],
   exports: [
     DashboardComponent,
